@@ -1,7 +1,14 @@
 {
-  "name": "grist-widget-template",
+  "name": "news-feed",
   "private": true,
-  "version": "0.0.1",
+  "version": "0.0.2",
+  "grist": {
+    "name": "News Feed",
+    "widgetId": "@arthurblanchon/news-feed",
+    "published": true,
+    "accessLevel": "full",
+    "renderAfterReady": true
+  },
   "type": "module",
   "scripts": {
     "dev": "vite",
