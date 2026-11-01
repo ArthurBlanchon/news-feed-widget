@@ -6,6 +6,10 @@ It reads search parameters from mapped columns on the linked Grist row and
 renders matching articles — either as shadcn article cards or as the
 embedded GDELT page (with Google Translate applied to titles).
 
+<!-- install-url:start -->
+**Install URL**, to paste into a Grist custom widget's URL field: <https://arthurblanchon.github.io/news-feed-widget/latest/>
+<!-- install-url:end -->
+
 `src/App.tsx` reads the linked row via `useGrist<_, GdeltMappedRow>()`,
 turns its mapped columns into GDELT filters (`src/lib/gdelt.ts`), fetches
 through `useGdeltFeed` (`src/hooks/use-gdelt-feed.ts`), and renders either
