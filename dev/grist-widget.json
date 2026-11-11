@@ -79,7 +79,7 @@
       "url": "https://github.com/ArthurBlanchon"
     }
   ],
-  "lastUpdatedAt": "2026-11-11T14:16:08.805Z",
+  "lastUpdatedAt": "2026-11-11T14:39:22.422Z",
   "gristWidgetSdk": {
     "schema": 1,
     "channel": "dev",
@@ -87,6 +87,7 @@
     "repository": "https://github.com/ArthurBlanchon/news-feed-widget",
     "license": "MIT",
     "sdk": "0.4.0",
-    "createGristWidget": "0.4.0"
+    "createGristWidget": "0.4.0",
+    "demo": "https://arthurblanchon.github.io/news-feed-widget/dev/demo/"
   }
 }
