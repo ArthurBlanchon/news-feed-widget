@@ -17,7 +17,7 @@ import { useGrist, useWidgetMetadata } from "grist-widget-sdk"
 
 export { GRIST_OPTIONS }
 
-export function App() {
+function App() {
   useWidgetMetadata(WIDGET_METADATA)
   const w = useGrist<Record<string, unknown>, GdeltMappedRow>()
 
