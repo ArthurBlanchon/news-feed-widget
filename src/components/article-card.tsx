@@ -9,6 +9,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
+import { httpUrl } from "@/app/safe-url"
 import { formatSeenDate } from "@/lib/gdelt"
 import type { GdeltArticle } from "@/types"
 
@@ -18,11 +19,13 @@ type ArticleCardProps = {
 
 export function ArticleCard({ article }: ArticleCardProps) {
   const seen = formatSeenDate(article.seendate)
-  const href = article.url_mobile || article.url
+  // Links and images from the feed: http(s) only.
+  const href = httpUrl(article.url_mobile) ?? httpUrl(article.url)
+  const image = httpUrl(article.socialimage)
 
   return (
     <Card className="h-full">
-      {article.socialimage ? (
+      {image && href ? (
         <a
           href={href}
           target="_blank"
@@ -30,7 +33,7 @@ export function ArticleCard({ article }: ArticleCardProps) {
           className="block overflow-hidden"
         >
           <img
-            src={article.socialimage}
+            src={image}
             alt=""
             className="aspect-[16/9] w-full object-cover"
             loading="lazy"
@@ -40,14 +43,18 @@ export function ArticleCard({ article }: ArticleCardProps) {
       ) : null}
       <CardHeader className="gap-2">
         <CardTitle className="line-clamp-3">
-          <a
-            href={href}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-primary hover:underline"
-          >
-            {article.title}
-          </a>
+          {href ? (
+            <a
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-primary hover:underline"
+            >
+              {article.title}
+            </a>
+          ) : (
+            article.title
+          )}
         </CardTitle>
         {seen ? <CardDescription>{seen}</CardDescription> : null}
       </CardHeader>
@@ -62,17 +69,19 @@ export function ArticleCard({ article }: ArticleCardProps) {
           <Badge variant="outline">{article.sourcecountry}</Badge>
         ) : null}
       </CardContent>
-      <CardFooter className="mt-auto justify-end gap-2 text-xs">
-        <a
-          href={href}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-muted-foreground hover:text-foreground inline-flex items-center gap-1"
-        >
-          Open article
-          <ExternalLink className="size-3.5" />
-        </a>
-      </CardFooter>
+      {href ? (
+        <CardFooter className="mt-auto justify-end gap-2 text-xs">
+          <a
+            href={href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1 text-muted-foreground hover:text-foreground"
+          >
+            Open article
+            <ExternalLink className="size-3.5" />
+          </a>
+        </CardFooter>
+      ) : null}
     </Card>
   )
 }
