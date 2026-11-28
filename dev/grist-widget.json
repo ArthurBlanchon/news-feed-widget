@@ -79,11 +79,11 @@
       "url": "https://github.com/ArthurBlanchon"
     }
   ],
-  "lastUpdatedAt": "2026-11-27T22:00:28.046Z",
+  "lastUpdatedAt": "2026-11-28T15:45:32.229Z",
   "gristWidgetSdk": {
     "schema": 1,
     "channel": "dev",
-    "version": "0.2.0",
+    "version": "0.2.1",
     "repository": "https://github.com/ArthurBlanchon/news-feed-widget",
     "license": "MIT",
     "sdk": "0.8.0",
