@@ -1,7 +1,7 @@
 {
   "name": "News feed",
   "widgetId": "@arthurblanchon/news-feed-widget",
-  "url": "https://arthurblanchon.github.io/news-feed-widget/v0.2.0/",
+  "url": "https://arthurblanchon.github.io/news-feed-widget/v0.2.1/",
   "published": true,
   "accessLevel": "read table",
   "columns": [
@@ -79,15 +79,15 @@
       "url": "https://github.com/ArthurBlanchon"
     }
   ],
-  "lastUpdatedAt": "2026-11-12T16:40:48.846Z",
+  "lastUpdatedAt": "2026-11-28T15:47:16.196Z",
   "gristWidgetSdk": {
     "schema": 1,
     "channel": "release",
-    "version": "0.2.0",
+    "version": "0.2.1",
     "repository": "https://github.com/ArthurBlanchon/news-feed-widget",
     "license": "MIT",
-    "sdk": "0.4.0",
-    "createGristWidget": "0.4.0",
-    "demo": "https://arthurblanchon.github.io/news-feed-widget/v0.2.0/demo/"
+    "sdk": "0.8.0",
+    "createGristWidget": "0.8.0",
+    "demo": "https://arthurblanchon.github.io/news-feed-widget/v0.2.1/demo/"
   }
 }
